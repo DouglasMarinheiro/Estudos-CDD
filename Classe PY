@@ -1,0 +1,230 @@
+BIBLIOTECA
+
+5 - class ingresso():
+    def __init__(self,valor):
+        self.valor=valor
+
+    def ImprimeValor(self):
+        print(f'Valor do Ingresso é : {self.valor}')
+
+
+class IngressoVip(ingresso):
+    def __init__(self,valor):
+        super().__init__(valor)
+
+    def ImprimeVip(self):
+        print(f'O valor do ingresso Vip é : {self.valor*1.50} ')
+
+4 - '''class Animal():
+    def __init__(self,nome,cor):
+        self.nome = nome
+        self.cor = cor
+    def comer(self):
+        print(f' O {self.nome } foi comer...')
+
+class Gato(Animal):
+    def __init__(self,nome,cor):
+        super(). __init__(nome,cor)
+    def miar(self):
+        print(f' O {self.nome} foi miando')'''
+
+
+3 - class Atleta():
+    def __init__(self, aposentado=False, peso=0):
+        self.aposentado = aposentado
+        self.peso = peso
+
+    def aposentar(self):
+        aposentado = True
+
+    def aquecer(self):
+        print('aqueceu')
+
+class Nadador(Atleta):
+    def __init__(self):
+        super().__init__()
+    def nadou(self):
+        print('nadou')
+
+class Corredor(Atleta):
+    def __init__(self):
+        super().__init__()
+    def correndo(self):
+        print('foi correr')
+
+class Ciclista (Atleta):
+    def __init__(self):
+        super().__init__()
+    def ciclista(self):
+        print('foi andar de bike')
+
+class TriAtleta(Nadador,Corredor,Ciclista):
+    def __init__(self):
+        super().__init__()
+
+
+
+2 - class ContaBancaria:
+    def __init__(self, numero, nome, tipo, status=False, limite=0, saldo=0):
+        self.numero = numero
+        self.nome = nome
+        self.tipo = tipo
+        self.status = status
+        self.limite = limite
+        self.saldo = saldo
+
+    def depositar(self, valor):
+        if self.status == True:
+            if self.limite == 1000:
+                self.saldo = self.saldo + valor
+                print(self.nome, f'seu deposito no valor de: {valor} reais, foi realizado com sucesso.')
+
+            elif self.limite <  1000:
+                self.limite += valor
+                print(self.nome, f'seu deposito no valor de: {valor} reais, foi realizado com sucesso.')
+                if self.limite > 1000:
+                    diferenca = self.limite -1000
+                    self.saldo += diferenca
+                    self.limite=1000
+        else:
+         print(self.nome, "seu deposito NÃO foi realizado")
+
+    def ativar(self):
+        if self.status == False:
+            self.status=True
+            print(self.nome, "sua conta ta ativa")
+        else:
+            print(self.nome, "sua conta ta inativa")
+
+    def VerificarSaldo(self):
+        print(self.nome, "seu saldo atual é: ", self.saldo,'reais')
+
+    def VerificarLimite(self):
+        print(self.nome, "seu limite é: ", self.limite, 'reais')
+
+
+    def sacar(self, saque):
+        if self.status == True:
+            if saque <= self.saldo:
+                self.saldo = self.saldo-saque
+                print(self.nome, f'seu saque no valor de: {saque} reais, foi realizado com sucesso')
+
+            elif saque > self.saldo:
+                self.limite -= ( saque - self.saldo)
+                self.saldo=0
+                print(f'Saldo insuficiente, será descontado o valor excedente do seu Limite,'
+                      f'restando apenas {self.limite} reais')
+
+            else:
+                print(self.nome, "seu saldo é insuficiente para saque")
+    def mudarlimite(self,valor):
+        self.limite = valor
+        print(f'Seu limite mudou, agora é de : {self.limite} reais')
+
+
+
+
+1 - class Pessoa:
+    def __init__(self, nome, peso, idade, comendo=False, falando=False):
+        self.nome = nome
+        self.peso = peso
+        self.idade = idade
+        self.comendo = comendo
+        self.falando = falando
+
+    def comer(self):
+        if self.comendo == True:
+            print(f'{self.nome} já esta comendo')
+        elif self.falando == True:
+            print(f'{self.nome} esta falando e nao pode comer ')
+
+        else:
+            print(f'{self.nome} foi comer e esta dando tchau !')
+            self.comendo = True
+    def dormir(self):
+        if self.dormir == True:
+            print(f'{self.nome} já esta dormindo')
+        elif self.comendo == True:
+            print(f'{self.nome} esta comendo e não pode dormir. ')
+        elif self.falando == True:
+            print(f'{self.nome} esta falando e nao pode dormir ')
+        else:
+            print(f'{self.nome} foi dormir !')
+            self.dormir = True
+    def parardecomer(self):
+        self.comendo = False
+        print(f'{self.nome} já acabou de comer !  ')
+    def falar(self):
+        if self.falando == True:
+            print(f'{self.nome} já esta falando')
+        elif self.comendo == True:
+            print(f'{self.nome} esta comendo e não pode falar. ')
+        elif self.dormir == True:
+            print(f'{self.nome} esta dormindo e não pode falar. ')
+        else:
+            print(f'{self.nome} pode falar !')
+            self.falando = True
+    def parardefalar(self):
+        self.falando = False
+
+
+
+    
+MAIN 
+
+2-from biblioteca import ContaBancaria
+banco = ContaBancaria(1234, "Douglas", "poupança")
+
+banco.ativar()
+banco.VerificarLimite()
+banco.mudarlimite(1000)
+banco.depositar(400)
+banco.VerificarSaldo()
+banco.sacar(450)
+banco.VerificarSaldo()
+banco.VerificarLimite()
+banco.depositar(100)
+banco.VerificarSaldo()
+banco.VerificarLimite()
+
+
+
+
+
+
+
+
+1- from biblioteca1 import Pessoa
+p1 = Pessoa('Douglas',91, 27)
+print(f'a pessoa: {p1.nome} tem {p1.idade} anos e pesa {p1.peso}kgs.')
+
+p1.comer()
+p1.falar()
+p1.dormir()
+p1.parardecomer()
+p1.falar()
+p1.falar()
+p1.comer()
+
+
+
+
+3 - from biblioteca import TriAtleta
+
+a=TriAtleta()
+
+a.nadou()
+a.correndo()
+a.ciclista()
+
+5 - from biblioteca import *
+
+x = ingresso(100)
+x.ImprimeValor()
+
+x2 = IngressoVip(x.valor)
+x2.ImprimeVip()
+
+
+
+
