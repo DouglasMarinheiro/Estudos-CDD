@@ -1,4 +1,17 @@
 BIBLIOTECA
+6 - def soma(a, b):
+    soma=a+b
+    return soma
+def sub (a, b):
+    sub=a-b
+    return sub
+def mult(a, b):
+    mult = a * b
+    return mult
+def div(a, b):
+    div=a/b
+    return div
+
 
 5 - class ingresso():
     def __init__(self,valor):
@@ -186,6 +199,32 @@ banco.VerificarLimite()
 banco.depositar(100)
 banco.VerificarSaldo()
 banco.VerificarLimite()
+
+6 - 
+from biblioteca import *
+while True:
+
+    print('---------- MENU -----------')
+
+    print('1 - SOMA\n2 - SUBTRACAO\n3 - MULTIPLICACAO\n4 - DIVISAO\n5 - SAIR\n')
+    x = int(input('Escolha uma opção :'))
+    if x == 5:
+        print('\nCalculadora Finalizada')
+        break
+
+    a = float(input('Digite o primeiro numero: '))
+    b = float(input('Digite o segundo numero : '))
+
+    if x ==1:
+       print(soma(a,b))
+    elif x ==2:
+        print(sub(a,b))
+    elif x ==3:
+        print(mult(a,b))
+    elif x ==4:
+        print(div(a,b))
+
+
 
 
 
