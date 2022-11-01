@@ -205,13 +205,14 @@ from biblioteca import *
 while True:
 
     print('---------- MENU -----------')
-
     print('1 - SOMA\n2 - SUBTRACAO\n3 - MULTIPLICACAO\n4 - DIVISAO\n5 - SAIR\n')
     x = int(input('Escolha uma opção :'))
+    while x not in range(1,6):
+        x=int(input('Digite uma opcao valida'))
     if x == 5:
         print('\nCalculadora Finalizada')
         break
-
+    z=float(input('Digite uma opcao valida:'))
     a = float(input('Digite o primeiro numero: '))
     b = float(input('Digite o segundo numero : '))
 
@@ -223,6 +224,11 @@ while True:
         print(mult(a,b))
     elif x ==4:
         print(div(a,b))
+
+
+
+
+
 
 
 
