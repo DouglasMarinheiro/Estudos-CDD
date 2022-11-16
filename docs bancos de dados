@@ -1,0 +1,49 @@
+import mysql.connector
+
+banco = mysql.connector.connect(
+host="localhost",
+user="root",
+password="cdd12345",
+database="aula04_douglas"
+
+)
+meucursor =banco.cursor()
+pesquisa= 'select * from alunos;'
+meucursor.execute(pesquisa)
+resultado = meucursor.fetchall()
+for x in resultado:
+    print(x)
+meucursor.close()
+banco.close()
+
+
+
+-----
+
+import mysql.connector
+
+banco = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="cdd12345",
+    database="aula04_douglas"
+
+)
+while True:
+
+    nome= str(input("Digite um Nome: "))
+    telefone= int(input('Digite um numero de telefone :'))
+    dnv= input("Deseja Adicionar novos dados ?\n(s) para SIM e (n) para NAO ! : ")
+
+    cursor = banco.cursor()
+    sql = "INSERT INTO alunos (nome,telefone) VALUES (%s,%s)"
+    data = (nome,telefone)
+    cursor.execute(sql,data)
+    banco.commit()
+    cursor.close()
+    banco.close()
+    if dnv == 's':
+        continue
+    else:
+        print('Finalizado')
+        break
