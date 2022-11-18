@@ -32,6 +32,7 @@ while True:
 
     nome= str(input("Digite um Nome: "))
     cpf= int(input('Digite um cpf válido :'))
+    telefone = int(input('Digite um numero de telefone :'))
     dnv= input("Deseja Adicionar novos dados ?\n(s) para SIM e (n) para NAO ! : ")
 
     cursor = banco.cursor()
@@ -41,6 +42,13 @@ while True:
     banco.commit()
     userid=cursor.lastrowid
     print(f'a quantidade de chaves primarias criadas : {userid}')
+
+    sql2 = "INSERT INTO telefones (nm_matricula,numero) VALUES (%s,%s)"
+    data2= (userid,telefone)
+    cursor.execute(sql2, data2)
+    banco.commit()
+    userid2 = cursor.lastrowid
+    print(f'a quantidade de chaves primarias criadas : {userid2}')
     cursor.close()
     banco.close()
     if dnv == 's':
