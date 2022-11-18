@@ -20,26 +20,27 @@ banco.close()
 
 -----
 
-import mysql.connector
+import  mysql.connector
 
 banco = mysql.connector.connect(
     host="localhost",
     user="root",
     password="cdd12345",
-    database="aula04_douglas"
-
+    database="douglas11"
 )
 while True:
 
     nome= str(input("Digite um Nome: "))
-    telefone= int(input('Digite um numero de telefone :'))
+    cpf= int(input('Digite um cpf válido :'))
     dnv= input("Deseja Adicionar novos dados ?\n(s) para SIM e (n) para NAO ! : ")
 
     cursor = banco.cursor()
-    sql = "INSERT INTO alunos (nome,telefone) VALUES (%s,%s)"
-    data = (nome,telefone)
+    sql = "INSERT INTO alunos (nome,cpf) VALUES (%s,%s)"
+    data = (nome,cpf)
     cursor.execute(sql,data)
     banco.commit()
+    userid=cursor.lastrowid
+    print(userid)
     cursor.close()
     banco.close()
     if dnv == 's':
