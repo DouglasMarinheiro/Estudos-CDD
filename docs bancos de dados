@@ -40,7 +40,7 @@ while True:
     cursor.execute(sql,data)
     banco.commit()
     userid=cursor.lastrowid
-    print(userid)
+    print(f'a quantidade de chaves primarias criadas : {userid}')
     cursor.close()
     banco.close()
     if dnv == 's':
