@@ -1,0 +1,98 @@
+**
+int a = 10;
+	int b = 10;
+	System.out.println (a++ + ++a); // dps do ++ = ele segura e  soma 1 para o proximo 10  \ antes do ++ ja tem valor somado antes da op 11+1 = 22
+	System.out.println (b++ + b++); // 10 + 11 = 21
+	
+	}
+
+
+}
+
+**
+int a = 10;
+int b = -10;
+boolean c = true;
+boolean d = false;
+	
+System.out.println(~a);
+System.out.println(~b);
+System.out.println(!c);
+System.out.println(!d);
+ }
+}
+
+**
+int a =3;
+	int b =4;
+	int c =7;
+	System.out.println(!((a>b) && (a<c)));
+		
+**
+int a =3;
+		int b =4;
+		int c =7;
+		
+		if(a++ >=b) 
+			System.out.println(--c);
+		else 
+			System.out.println(c++);
+      
+***
+
+	 int idade = 15;
+	 if (idade < 18) {
+		 System.out.println("não ppode entrar");
+		 } else {
+			 System.out.println("Pode entrar");
+***
+
+	Scanner entrada = new Scanner(System.in);
+		System.out.println("Digite um numero:");
+		double resp = entrada.nextDouble();
+		System.out.println(resp);
+		
+		
+		
+		
+		
+		
+		
+		
+		entrada.close();
+ 
+***
+Scanner entrada = new Scanner(System.in);
+		System.out.println("Digite um numero:");
+		double resp = entrada.nextDouble();
+		
+		if (resp < 0) {
+			 System.out.println("valor negativo");
+			 } else {
+				 System.out.println("valor postivo");
+			 }
+
+		
+		entrada.close();
+    
+    
+*****
+
+Scanner entrada = new Scanner(System.in);
+		System.out.println("Digite o primeiro numero:");
+		double resp1 = entrada.nextDouble();
+		System.out.println("Digite o segundo numero:");
+		double resp2 = entrada.nextDouble();
+		System.out.println("Digite o terceiro numero:");
+		double resp3 = entrada.nextDouble();
+		
+		if ((resp1 > resp2) && (resp2 > resp3)){
+			 System.out.println("o numero " + resp1 + " É o maior");
+			 } if((resp3 < resp1) && (resp3 < resp2)){
+				 System.out.println("o numero" + resp3 + "e o menor" );
+			 }
+
+		
+		entrada.close();
+
+    
