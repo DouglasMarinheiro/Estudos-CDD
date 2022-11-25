@@ -153,3 +153,26 @@ System.out.println("RESPONDA APENAS COM:\n(S) PARA SIM\n     E     \n(N) PARA NÃ
 
 }
     
+*****
+
+int c1 = 0;
+		while(c1 <= 100){
+			c1++;
+			if(c1%2==0)
+				System.out.print(c1+ " ");
+		}
+			
+		c1 = 0;
+		System.out.println("");
+		while(c1 < 100){
+			c1++;
+			if(c1%2 !=0)
+				System.out.print(c1 + " ");
+			}
+				
+		
+		}
+		
+		
+		
+	}
