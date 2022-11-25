@@ -95,4 +95,61 @@ Scanner entrada = new Scanner(System.in);
 		
 		entrada.close();
 
+
+*****
+
+System.out.println("RESPONDA APENAS COM:\n(S) PARA SIM\n     E     \n(N) PARA NÃO!");
+		
+		Scanner entrada1 = new Scanner(System.in);
+		System.out.println("Telefonou para a vitima? ");
+		int i = 0;
+		String p1 = entrada1.next();
+		if (p1.toUpperCase().equals("S")) {
+			i++;
+		}
+		
+		Scanner entrada2 = new Scanner(System.in);
+		System.out.println("Esteve no local do crime? ");
+		p1 = entrada1.next();
+		if (p1.toUpperCase().equals("S")) {
+			i++;
+		}
+		
+		Scanner entrada3 = new Scanner(System.in);
+		System.out.println("Mora perto da vitima?" );
+		p1 = entrada1.next();
+		if (p1.toUpperCase().equals("S")) {
+		i++;
+				}
+
+		Scanner entrada4 = new Scanner(System.in);
+		System.out.println("Devia para a vitima? ");
+		p1 = entrada1.next();
+		if (p1.toUpperCase().equals("S")) {
+		i++;
+				}
+		
+		Scanner entrada5 = new Scanner(System.in);
+		System.out.println("ja trabalhou com a vitima ? ");
+		p1 = entrada1.next();
+		if (p1.toUpperCase().equals("S")) {
+		i++;
+		}
+		
+		
+		if ( i==2 ) {
+			System.out.println("você é suspeito");
+		}
+		else if ( i>=3 && i<=4) {
+			System.out.println("você é cumplice");
+		}
+		else if ( i==5 ) { 
+			System.out.println("Voce é o assassino");
+		}	
+		else
+			System.out.println("você é Inocente");
+		
+	}
+
+}
     
