@@ -155,6 +155,71 @@ System.out.println("RESPONDA APENAS COM:\n(S) PARA SIM\n     E     \n(N) PARA NÃ
     
 *****
 
+
+	int soma = 0;
+		for (int i = 50; i > 0; i = i -1) {
+			if(i%2 !=0 ) {
+		
+			System.out.print(i + " ");
+		
+
+	}
+}
+
+}
+}
+------
+
+int soma = 0;
+		
+		for (int i = 1; i < 50; i += 1) {
+			if(i%2 !=0 ) {
+				soma+=i;
+		
+		
+
+	}
+}
+		System.out.print(soma);
+}
+}
+
+------
+
+int soma=0;
+		for (int i = 1; i < 100; i+=1) {
+			if(i%3==0) {
+				
+		
+				System.out.print(i+" ");
+
+	}
+}
+             		
+}
+}
+
+------
+
+	int soma=0;
+		for (int i = 1; i < 100; i+=1) {
+			if(i%3==0) {
+			soma+=i;	
+		
+				
+
+	}
+			
+}
+				System.out.print(soma);		
+}
+}
+
+
+--------
+
+
+
 int c1 = 0;
 		while(c1 <= 100){
 			c1++;
@@ -175,4 +240,23 @@ int c1 = 0;
 		
 		
 		
+	}
+	
+-----
+
+int x = 5;
+		if(x%2==0) {
+		 x = x/2;
+		 System.out.println(x);
+		}
+		else {
+			x = 3 *x +1;
+			System.out.println(x);
+		
+				
+
+	}
+			
+}
+				
 	}
