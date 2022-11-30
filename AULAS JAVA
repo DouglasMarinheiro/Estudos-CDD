@@ -260,3 +260,44 @@ int x = 5;
 }
 				
 	}
+----
+
+int numeroTres = 3;
+		int numeroCinco = 5;
+		int somaMultiploTres = 0;
+		int somaMultiploCinco = 0;
+    	int result=0;{
+    
+    		for(int i = 1; i < 21; i++) {
+    			if((i%numeroTres == 0)||(i%numeroCinco == 0))
+    				result += i;     
+
+    			if((i%numeroTres == 0)&&(i%numeroCinco == 0))
+    				result += i;
+    }
+    	System.out.println("A soma dos multiplos de 3 e 5 abaixo de 20, é: " +result);
+-----
+
+Scanner entrada = new Scanner(System.in);
+		double [] notas = new double[5];
+		double soma =0;
+		
+		for(int i=0; i<5; i++) {
+			System.out.println("Digite as notas : ");
+			notas [i] = entrada.nextDouble();
+		}
+		for (double n: notas) {
+			soma+=n;
+			
+		
+			
+		}
+		double media = soma/notas.length;
+		System.out.println(media);
+		}
+		
+
+	
+
+}
+
