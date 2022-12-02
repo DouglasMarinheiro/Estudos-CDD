@@ -301,3 +301,46 @@ Scanner entrada = new Scanner(System.in);
 
 }
 
+double[] ganhos = {220,120,450,650,300,1050,0};
+		double soma=0;
+		
+		for (int i =0;i<ganhos.length; i++) {
+			soma+=ganhos[i];
+			
+		}
+	
+		System.out.printf(" ganhos da semana: " +soma+ "\n media diaria :%.2f%n",(soma/ganhos.length));
+		
+	}
+	
+-----
+
+double[] array1 = {32,25,50,10,16,30};
+		double[] array2 = {8,2,9,11,15,20,45};
+		double[] array3 = new double [array1.length+array2.length];
+		
+		for (int i=0;i<13;i++) {
+			if (i<6)
+				array3[i]=array1[i];
+			else
+				array3[i]=array2[i-6];
+		}
+		
+			
+		
+	
+		for (int i=0;i<array3.length-1;i++) {
+			for (int k=i+1;k<array3.length;k++) {
+				if (array3[i]>array3[k]) {
+					double n = array3[k];
+					array3[k]=array3[i];
+					array3[i]=n;
+				}
+			}
+		}
+		for (double i:array3) {
+			System.out.println(i + " ");
+	}
+}
+
+}
